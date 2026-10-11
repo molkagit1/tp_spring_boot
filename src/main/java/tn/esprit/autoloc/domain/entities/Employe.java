@@ -23,6 +23,5 @@ public class Employe {
     private RoleEmploye role;
 
     @ManyToOne
-    @JoinColumn(name = "id_agence")
     private Agence agence;
 }

@@ -6,8 +6,8 @@ import tn.esprit.autoloc.domain.enums.CategorieVehicule;
 import tn.esprit.autoloc.domain.enums.StatutVehicule;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "vehicule")
@@ -42,20 +42,14 @@ public class Vehicule {
     private StatutVehicule statut;
 
     @ManyToOne
-    @JoinColumn(name = "id_agence")
     private Agence agence;
 
     @OneToMany(mappedBy = "vehicule", cascade = CascadeType.ALL)
-    private List<Maintenance> maintenances = new ArrayList<>();
+    private Set<Maintenance> maintenances = new HashSet<>();
 
     @ManyToMany
-    @JoinTable(
-            name = "vehicule_equipement",
-            joinColumns = @JoinColumn(name = "id_vehicule"),
-            inverseJoinColumns = @JoinColumn(name = "id_equipement")
-    )
-    private List<Equipement> equipements = new ArrayList<>();
+    private Set<Equipement> equipements = new HashSet<>();
 
     @OneToMany(mappedBy = "vehicule", cascade = CascadeType.ALL)
-    private List<Reservation> reservations = new ArrayList<>();
+    private Set<Reservation> reservations = new HashSet<>();
 }
