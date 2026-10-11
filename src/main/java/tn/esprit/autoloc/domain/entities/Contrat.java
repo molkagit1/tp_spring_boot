@@ -27,6 +27,6 @@ public class Contrat {
     @OneToOne
     private Reservation reservation;
 
-    @OneToMany(mappedBy = "contrat", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "contrat", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
     private Set<Paiement> paiements = new HashSet<>();
 }

@@ -44,12 +44,12 @@ public class Vehicule {
     @ManyToOne
     private Agence agence;
 
-    @OneToMany(mappedBy = "vehicule", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "vehicule", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Set<Maintenance> maintenances = new HashSet<>();
 
     @ManyToMany
     private Set<Equipement> equipements = new HashSet<>();
 
-    @OneToMany(mappedBy = "vehicule", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "vehicule", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Set<Reservation> reservations = new HashSet<>();
 }

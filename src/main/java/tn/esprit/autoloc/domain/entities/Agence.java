@@ -23,9 +23,9 @@ public class Agence {
     private String adresse;
     private String telephone;
 
-    @OneToMany(mappedBy = "agence", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "agence", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Set<Employe> employes = new HashSet<>();
 
-    @OneToMany(mappedBy = "agence", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "agence", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Set<Vehicule> vehicules = new HashSet<>();
 }

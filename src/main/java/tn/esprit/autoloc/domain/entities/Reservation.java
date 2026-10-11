@@ -30,6 +30,6 @@ public class Reservation {
     @ManyToOne
     private Client client;
 
-    @OneToOne(mappedBy = "reservation", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "reservation", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Contrat contrat;
 }
