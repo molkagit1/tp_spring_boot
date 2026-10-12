@@ -1,4 +1,5 @@
 package tn.esprit.autoloc.service.interfaces;
 
-public class IAgenceService {
+public interface IAgenceService {
+
 }

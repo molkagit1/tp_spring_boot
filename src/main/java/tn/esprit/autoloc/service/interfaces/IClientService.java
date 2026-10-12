@@ -1,4 +1,4 @@
 package tn.esprit.autoloc.service.interfaces;
 
-public class IClientService {
+public interface IClientService {
 }

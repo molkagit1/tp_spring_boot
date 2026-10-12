@@ -1,4 +1,4 @@
 package tn.esprit.autoloc.service.interfaces;
 
-public class IContratService {
+public interface IContratService {
 }
